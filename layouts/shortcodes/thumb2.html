@@ -1,0 +1,18 @@
+{{ $originalURL := .Get 0 }}
+{{ $imageRes := .Page.Resources.GetMatch $originalURL }}
+
+{{ $imageSizeByte := len $imageRes.Content }}
+{{ if gt $imageSizeByte 300000 }}
+    {{ $angle := "" }}
+    {{ if in "jpeg tiff" $imageRes.MediaType.SubType }}
+        {{ with $imageRes.Exif }}
+            {{ $orientationArray := slice "dummy" "r0" "r0" "r180" "r0" "r0" "r270" "r0" "r90" }}
+            {{ $angle = (index $orientationArray $imageRes.Exif.Tags.Orientation)}}
+        {{end}}
+    {{end}}
+    {{ $imageRes = $imageRes.Fit (print "1000x1000 jpg " $angle) }}
+{{ end }}
+
+{{ $thumbnailURL := $imageRes.RelPermalink }}
+
+<a href={{$originalURL}}><img src={{$thumbnailURL}} ></a>

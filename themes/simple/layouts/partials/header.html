@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/common.css">
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>  
+
+  {{ if or (.IsHome) ($.Param "math") }}
+  <link rel="stylesheet" href="/katex/katex.min.css">
+  <script defer src="/katex/katex.min.js"></script>
+  <script defer src="/katex/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}]
+      });
+    });
+  </script>
+  {{ end }}
+</head> 
+
+<body>  
+
+<div style="text-align: center;"> <div id="title"> 週末のホームページ </div></div>
+<style type="text/css">
+#title {
+  background: linear-gradient(to right,
+                               red,
+                               orange,
+                               rgb(255, 255, 0),
+                               rgb(19, 189, 19),
+                               rgb(36, 143, 143),
+                               blue,
+                               purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: xx-large;
+}
+</style>

@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+{{ partial "breadcrumb.html" .}}
+<div>
+    <h1>{{ .Title }}</h1>
+</div>
+<div id="date">
+
+    {{ if .Params.Date }}
+    初版: <time datetime="{{ .Date.Format "2006-01-02T15:04:05JST" }}">{{ .Date }}</time> <br>
+    {{ if ne (.Date.Format ( .Site.Params.dateformat | default "2006年1月2日")) (.Lastmod.Format ( .Site.Params.dateformat | default "2006年1月2日"))}}
+    更新: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05JST" }}">{{ .Lastmod }}</time>
+    {{ end }}
+    {{ end }}
+
+</div>
+
+<div>
+    {{ .Content }}
+</div>
+
+<br>
+
+{{ partial "footer.html" . }}

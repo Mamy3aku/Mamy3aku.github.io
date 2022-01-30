@@ -1,0 +1,34 @@
+{{ partial "header.html" . }}  
+
+
+<h3>自己紹介</h3>
+管理人の週末といいます。
+よろしくお願いします。
+
+<h3> コンテンツ</h3>
+{{ with .CurrentSection }}
+  <ul>
+    {{ range .Sections }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+  </ul>
+{{ end }}
+
+<h3>新着記事</h3>  
+<ul>
+{{ range .Paginator.Pages.ByDate.Reverse }}
+  {{ if not .Params.meta }}
+    <li> {{ dateFormat "2006年01月02日" .Date }}  <a href="{{ .RelPermalink }}">{{ .Title }} </a>
+  {{ end }}
+{{ end }}  
+</ul>
+
+<h3> 免責・そのほか </h3>
+<p>
+記事に誤りがあっても責任は取りません。ただ、指摘してくれれば直す努力はします。
+</p>
+<p>
+どのページにリンクを張ってもらっても構いません。ご自由にどうぞ。
+</p>
+
+{{ partial "footer.html" . }}  

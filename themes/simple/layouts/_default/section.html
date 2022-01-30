@@ -1,0 +1,31 @@
+{{ partial "header.html" . }}
+{{ partial "breadcrumb.html" .}}
+<div>
+  <h1>{{ .Title }}</h1>
+</div>
+
+{{ if .RegularPages }}
+
+<h3>ページ一覧</h3>
+<ul>
+  {{ range .RegularPages }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+</ul>
+
+{{ end }}
+
+{{ if .Sections }}
+
+<h3> {{ .Params.SubsectionTitle }} </h3>
+{{ with .CurrentSection }}
+<ul>
+  {{ range .Sections }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ partial "footer.html" . }}
+
+{{ end }}

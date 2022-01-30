@@ -1,0 +1,42 @@
+<nav>
+<ol class="breadcrumb">
+  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</ol>
+{{ define "breadcrumbnav" }}
+  {{ if .p1.Parent }}
+    {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+  {{ else if not .p1.IsHome }}
+    {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+  {{ end }}
+  <li>
+  {{ if eq .p1 .p2 }}
+    {{ .p1.LinkTitle }}
+  {{ else }}
+    <a href="{{ .p1.Permalink }}">{{ .p1.LinkTitle }}</a>
+  {{ end }}
+  </li>
+{{ end }}
+</nav>
+
+<style type="text/css">
+.breadcrumb {
+  padding: 0;
+}
+.breadcrumb li {
+  display: inline;
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+.breadcrumb a{
+  text-decoration: none;
+}
+.breadcrumb li:not(:last-child)::after {
+  content: '>';
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+</style>
+

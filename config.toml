@@ -1,0 +1,9 @@
+baseURL = "https://www.shumatsu-opt.jp/"
+languageCode = "ja-jp"
+title = "週末のホームページ"
+theme = "simple"
+enableGitInfo = true
+pygmentsCodeFences = true
+
+[markup.goldmark.renderer]
+  unsafe = true
