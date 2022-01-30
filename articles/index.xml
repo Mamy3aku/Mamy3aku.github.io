@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>パソコンとかデジタル機器 on 週末のホームページ</title><link>https://Mamy3aku.github.io/articles/</link><description>Recent content in パソコンとかデジタル機器 on 週末のホームページ</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><atom:link href="https://Mamy3aku.github.io/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>Kernel Power 41 の原因と対処法</title><link>https://Mamy3aku.github.io/articles/kp-41/</link><pubDate>Mon, 07 Sep 2020 00:06:51 +0900</pubDate><guid>https://Mamy3aku.github.io/articles/kp-41/</guid><description>ブルースクリーン 先月末、メインの自作機で頻繁にブルースクリーンが発生するようになりました。 ゲームをしているとき、ブラウジングしているとき、タイミングは様々です。 そのほか、Firefox のタブが頻繁にクラッシュする症状もありました。
+イベントビューアを見ると、「Kernel Power 41」というエラーコードが表示されていました。KP41 病と呼ばれていて、原因がさまざまなため非常に対処しづらいエラーです。
+実は先代のパソコンでもこのエラーにハマったことがあります。その時の原因はなんと USB 接続のマウスでした。 それまでは何事も無く使用していたマウスが原因だったのです。結局新しいマウスに変えて事なきを得ました。
+PCの環境 CPU AMD Ryzen 7 2700X (CPBオフ) GPU Palit Microsystems RTX 2070 Super JS 8GB NE6207SS19P2-1040J OS Microsoft Windows 10 Pro 64bit マザーボード AsRock X470 Master SLI メモリー G.Skill F4-3400C16D-16GSXW x 2 (計32GB) ケース fractal design Define R5 White 電源 COOLER MASTER V750 Semi-Modular SSD1 Intel SSD 545s SSDSC2KW512G8X1 (512GB) SSD2 Crucial MX500 CT1000MX500SSD1/JP (1000GB) HDD Western Digital WD40EZRZ-RT2 (WD Blue 4TB) BDドライブ Pioneer BDR-211JBK CPUファン サイズ 虎徹 MarkⅡ CPUグリス Thermal Grizzly Kryonaut テレビボード アースソフト PT3 USB端子増設ボード 玄人志向 USB3.</description></item><item><title>GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法</title><link>https://Mamy3aku.github.io/articles/git_ssh_setting/</link><pubDate>Sun, 05 Jul 2020 00:06:51 +0900</pubDate><guid>https://Mamy3aku.github.io/articles/git_ssh_setting/</guid><description>GitHub から pull したり、 push したりするときにいちいちユーザーID とパスワードを打つのが面倒なので、ssh の秘密鍵と公開鍵を使ってログインできるように設定します。
+公開鍵と秘密鍵の作成 ~/.ssh ディレクトリを作り、そこに移動し以下のコマンドを実行してください。
+ssh-keygen -t rsa これで、公開鍵(id_rsa.pub)と秘密鍵(id_rsa)のペアを作成します。
+途中でパスフレーズを設定すると、この鍵のペアを使ってログインするときにパスフレーズの入力が必要になります。
+セキュリティ上は設定したほうが好ましいですが、いちいち打つのが面倒なので私はパスフレーズは設定しませんでした (もし、 PC を盗まれた場合に秘密鍵が漏れることになりますから、絶対に盗まれないようにするか、 BitLocker とかでドライブを暗号化しておくことをお勧めします)。
+~/.ssh/config の設定 ~/.ssh/config に以下のように追記します(なければ作成してください)。
+Host はただの名前で好きなように決めてもらって構いません。
+重要なのは HostName と User と IdentityFile です。これを間違えると繋がりません。 ~/.ssh/config 1 2 3 4 Host github.com HostName github.com User shumatsu7 IdentityFile ~/.ssh/id_rsa
+GitHub 側の設定 GitHub の SSH and GPG keys にアクセス、「New SSH key」をクリックし、「Key」に id_rsa.pub の中身をコピペします。
+Title はどの端末の公開鍵かわかるように適当につけてください。
+git のローカルリポジトリの設定 もし、今まで https でやり取りしていた場合、ssh が使われないので設定を変えます。 git のローカルリポジトリに移動し、</description></item><item><title>NEC MultiSync EA271U をハードウェアキャリブレーションしてみる</title><link>https://Mamy3aku.github.io/articles/ea271u_calibration/</link><pubDate>Sun, 28 Jun 2020 00:06:51 +0900</pubDate><guid>https://Mamy3aku.github.io/articles/ea271u_calibration/</guid><description>EA271U の簡単なレビュー キャリブレーションの前に簡単にレビューを書いておきます。
+最近はもっと安くて写りもそんなに悪くないディスプレイがたくさんありますが、普段から使うものなので奮発して NEC のディスプレイを買いました。
+この製品、ネットで検索しても価格.comでレビューが1件見つかるだけでした。物自体は悪くないし、同じ価格帯の EIZO EV2785 はそこそこレビューがあるのに…。
+ちなみに EV2785 も持っていましたが、EA271Uのほうが以下の点でいいと思いました(EV2785 は売ってしまいました)
+黒の締まりが EA271U の方がいい EA271U はハードウェアキャリブレーションできるのがうれしい EV2785 は画面下部の輝度低下が結構ひどかった 両方ともコントラスト比が 1300:1 で、最初は同じパネルを使っているのかと思いましたが違うみたいです。 EA271U はダイレクトボンディングのような印象、EV2785 は表示部分からパネルまで空間が開いているような印象でした。
+筐体のつくりは正直値段に見合ったものとは思えないです。下側のベゼル部分がしっかり固定されておらず最初は不良品かと思ってしまいました。 一応問い合わせてみましたが、どうやら仕様のようでした。この点は少しがっかりです。
+ただ、画質はとてもいいですよ！！
+では本題に入って、NEC MultiSync EA271U のハードウェアキャリブレーションをしていきます。
+用意したもの EA271U SpectraView II (キャリブレーションソフト) i1 Display Pro (キャリブレーター) Spectra View の外箱が想像以上にデカイです(どうせシリアルNoしか見ないのに)。
+SpectraView II の環境設定 PC とは DisplayPort で接続、また、USB でも接続しています。
+計測の精度などは、「編集」=&amp;gt;「環境設定」から変えられます。今回は精度とコントラスト重視で以下のように設定しました。
+目標値とモニタの設定 目標値 輝度: 90cd/mm 色温度: D65 ガンマ: カスタム(sRGB) 色域: ネイティブ できるだけ sRGB に近づけられるよう、目標値は下記のようにセットアップ。ちなみに、EA シリーズは色域を設定できないんですね。盲点でした。 SpectraView II の取説によると、PA シリーズのみが色域を設定できるようです。</description></item><item><title>Crucial SSD MX500 1TB レビュー</title><link>https://Mamy3aku.github.io/articles/mx500-1tb/</link><pubDate>Tue, 30 Jul 2019 00:06:51 +0900</pubDate><guid>https://Mamy3aku.github.io/articles/mx500-1tb/</guid><description>SSDが安いのでCrucialの1TBを買ってみました．最近はかなり価格が落ちてきますが，そろそろまた上がるという情報もありますね．
+これはDドライブとして写真とか音楽を保存するのに使う予定です．ちなみに，Cドライブにはintelの512GBのSSDを使っています．
+早速Crystal Disk Markで計測してみました．↓
+まあ普通ですね．速度は問題ありません．
+ただ発熱が結構あります．室温23.5度で，アイドル時31度もあります(intelのSSDは24度前後です)．
+さらにベンチマーク中は最高で43度になりました(intelは34度)．
+intel製に比べておおよそ+8~9度もあります．
+最近はNVMeの高速なSSDもありますが，普通に60度とかまで上がるらしいです．あえてSATA3のを選んだのは発熱を気にしてなのですが，その意味ではintelを選べばよかったです．正直後悔しています．
+PCケースはDefine R5を使っていますが，SSDが吸気ファンのすぐ後ろに設置されていて，内部に取り込まれる空気がここで少し高くなってしまいそうです．実際ほとんど影響ないかもしれませんが，神経質なので気になってしまいます．</description></item></channel></rss>

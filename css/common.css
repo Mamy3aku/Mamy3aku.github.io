@@ -1,0 +1,128 @@
+@media screen and (max-width: 768px) {
+  body {
+    width: auto;
+    font-size: 16px;
+  }
+  ul {
+    padding-left: 1.5em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 769px)  {
+  body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    font-size: 14px;
+  }
+}
+html {
+  overflow-y:scroll;
+}
+body {
+    background-color: #8ae8ff;
+    font-weight: bold;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #bb00bb
+}
+a:link {
+    color: #2222cc
+}
+
+dt {
+    line-height: 1.5em;
+}
+
+h3::before {
+    content: '★';
+}
+h3 {
+    background-color: #ff0000;
+    font-size: large;
+    color: white;
+}
+
+h1{
+    background-color: #ffff00;
+    color: black;
+    text-align: center;
+}
+
+h4::before{
+  content: '♦';
+  color: #ff0000;
+}
+h4 {
+    color: black;
+    width: max-content;
+    font-size: large;
+}
+
+footer{
+    color: #cccccc;
+    font-style: italic;
+    background-color: #990099;
+    text-align: center;
+}
+img{
+  max-width: 100%;
+}
+.imgv {
+  width: 45%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.5%;
+  padding: 0;
+  max-width: 100%;
+}
+.imgh {
+  width: 88.0%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.5%;
+  padding: 0;
+  max-width: 100%;
+}
+.pics{
+  text-align:center;
+}
+#date{
+  text-align:right;
+}
+
+
+li{
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+p{
+  margin-top:0.05rem;
+  margin-bottom:0.05rem;
+}
+
+
+.xCodeBlock_title {
+  display: inline-block;
+  font-size: smaller;
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0.2em 0.7em;
+  background: gray;
+  color: white;
+}
+.xCodeBlock_code {
+  margin-top: 0;
+}
+.xCodeBlock_code pre {
+  padding: 0.0em;
+  white-space: pre-wrap;
+}

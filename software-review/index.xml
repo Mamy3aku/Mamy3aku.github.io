@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ソフトウェアのレビュー on 週末のホームページ</title><link>https://Mamy3aku.github.io/software-review/</link><description>Recent content in ソフトウェアのレビュー on 週末のホームページ</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><atom:link href="https://Mamy3aku.github.io/software-review/index.xml" rel="self" type="application/rss+xml"/><item><title>Mozilla Firefox のカスタマイズメモ</title><link>https://Mamy3aku.github.io/software-review/firefox/</link><pubDate>Thu, 27 Aug 2020 15:15:42 +0900</pubDate><guid>https://Mamy3aku.github.io/software-review/firefox/</guid><description>アドオン Adblock Plus Share on Twitter Vim Vixen Tree Style Tab TST Mouse Wheel and Double Click ツリー型タブのテーマ設定 Plain にしてこのスタイルを適用する
+UI 密度をコンパクトにする バーガーメニュー =&amp;gt; カスタマイズ =&amp;gt; 下のほうの「UI密度」から「コンパクト」に変更
+サイドバーのヘッダーを非表示にする toolkit.legacyUserProfileCustomizations.stylesheets = true
+about:support からプロファイルフォルダを開く。
+#sidebar-header { display: none; } を chrome/userChrome.css に追記する
+フォントのレンダリングをきれいにする gfx.font_rendering_cleartype_params.rendering_mode = 5
+そのほか ブックマークバーを表示
+最終的にこんな感じになる</description></item><item><title>foobar2000のカスタマイズ</title><link>https://Mamy3aku.github.io/software-review/foobar2000/</link><pubDate>Mon, 01 Jun 2020 22:15:42 +0900</pubDate><guid>https://Mamy3aku.github.io/software-review/foobar2000/</guid><description>foobar2000 とは？ foobar2000 の公式ホームページ (Download タブから落とせます)
+軽量でカスタマイズ範囲が広いWindows向けの音楽プレイヤーです。
+とにかく軽く、起動も一瞬で動作中もサクサク動きます。余計なバックグラウンドサービスも走りません。クリーンです。
+また、カスタマイズできる範囲が広く自分好みのインターフェースにしたり、アップサンプリング再生するプラグインでCD音源やMP3音源をハイレゾ化したりもできます。 柔軟にカスタマイズできる分、設定にはある程度知識が必要となり初心者向けのソフトではないです。
+良い点 シンプルで軽量 自分好みにカスタマイズしやすい WASAPIやASIOでビットパーフェクトな出力ができる 悪い点 使いやすくするにはある程度カスタマイズが必要 iPhoneやAndroidなど外部機器との連携機能が弱い 2点目の外部連携が弱いのは、必要ない機能が入っていないという点で、私にとってはむしろ嬉しいことです。
+カスタマイズ UIはトップに張った画像のようにしています。
+入れているプラグイン Column UI ユーザーインターフェイスのカスタマイズ用プラグイン EsPlaylist アルバムジャケット一覧を表示するためのプラグイン Playback Statistics 曲ごとの再生数といった統計情報を記録 WASAPI output support WASAPI 経由でビットパーフェクトな出力ができるようになる。ちなみに DAC は FOSTEX の HP-A4 を使っています。 レイアウト レイアウトはこんな感じです。 設定ファイルもおいておきます。Preferences =&amp;gt; Columns UI の 「Import Configurations&amp;hellip;」 からインポートして使ってください。
+設定ファイル
+フェーディングをオフにする デフォルトだと曲の最初と最後がフェーディングするようになっていますが、これは必要ないのでオフにします。 Playback =&amp;gt; Output のスライドバーを左に寄せます(数値を直接編集することはできないみたい)。
+出力先をすぐに切り替えられるようにする 出力先の WASAPI とプライマリーサウンドドライバー(PS)を簡単に切り替えられるようにします。 WASAPI で出力すると、排他モードなのでほかのソフトの音は一切聞こえなくなります。 集中して聞きたいときは WASAPI、ゲームとか作業しながら聞きたいときは PS にすぐ切り替えられると便利なのでそうします。 コントロールボタンの「P」と「W」で切り替えられるようにしています。 手順も載せておきます。</description></item></channel></rss>
