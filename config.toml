@@ -1,6 +1,6 @@
 baseURL = "https://Mamy3aku.github.io/"
 languageCode = "ja-jp"
-title = "週末のホームページ"
+title = "mtzkのホームページ"
 theme = "simple"
 enableGitInfo = true
 pygmentsCodeFences = true
