@@ -98,11 +98,11 @@ StarTech.com 35FCREADBU3 </a> </dd>
 
 <dt> モニター </dt>
 <dd> <a href="https://kakaku.com/item/K0001120217/">
-NEC MultiSync LCD-EA271U-BK </a> x 3 (27インチ 4K 3840x2160 IPS) </dd>
+NEC MultiSync LCD-EA271U-BK </a> x 2 (27インチ 4K 3840x2160 IPS) </dd>
 
 <dt> キーボード </dt>
-<dd> <a href="https://kakaku.com/item/K0000876286/">
-東プレ REALFORCE 91UG-S </a> </dd>
+<dd> <a href="https://kakaku.com/item/K0000930416/">
+FILCO Majestouch 2 HAKUA Tenkeyless 茶軸 [マットホワイト] </a> </dd>
 
 <dt> マウス </dt>
 <dd> <a href="https://kakaku.com/item/J0000030770/">
@@ -119,5 +119,9 @@ FOSTEX HP-A4 </a> </dd>
 <dt> ヘッドホン </dt>
 <dd> <a href="https://kakaku.com/item/K0000535340/">
 AKG K712 PRO </a> </dd>
+
+<dt> イヤホン </dt>
+<dd> <a href="https://kakaku.com/item/K0000157591/">
+オーディオテクニカ ATH-CM707 </a> </dd>
 
 </div>
