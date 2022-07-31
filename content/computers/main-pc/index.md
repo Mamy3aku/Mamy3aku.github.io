@@ -102,7 +102,7 @@ NEC MultiSync LCD-EA271U-BK </a> x 2 (27インチ 4K 3840x2160 IPS) </dd>
 
 <dt> キーボード </dt>
 <dd> <a href="https://kakaku.com/item/K0000930416/">
-FILCO Majestouch 2 HAKUA Tenkeyless 茶軸 [マットホワイト] </a> </dd>
+FILCO Majestouch 2 HAKUA Tenkeyless </a> (茶軸 マットホワイト) </dd>
 
 <dt> マウス </dt>
 <dd> <a href="https://kakaku.com/item/J0000030770/">
