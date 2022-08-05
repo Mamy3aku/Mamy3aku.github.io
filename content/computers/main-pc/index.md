@@ -77,7 +77,7 @@ Western Digital WD40EZRZ-RT2 </a> (WD Blue 4TB) </dd>
 <dd> <a href="https://kakaku.com/item/K0000970025/">
 Pioneer BDR-211JBK </a> </dd>
 
-<dt> CPUファン </dt>
+<dt> CPUクーラー </dt>
 <dd> <a href="https://kakaku.com/item/K0001034299/">
 noctua NH-D15 </a> </dd>
 
@@ -111,6 +111,10 @@ Microsoft Pro IntelliMouse </a> </dd>
 <dt> マイク </dt>
 <dd> <a href="https://www.area-powers.jp/product/others/4580127699364/index.html">
 AREA SD-U2MIC-Pi </a> </dd>
+
+<dt> Web カメラ </dt>
+<dd> <a href="https://kakaku.com/item/K0001151127/">
+Logicool Pro Stream Webcam C922n </a> [ブラック] </dd>
 
 <dt> USB-DAC </dt>
 <dd> <a href="https://kakaku.com/item/K0000588800/">
