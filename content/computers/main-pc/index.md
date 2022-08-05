@@ -36,7 +36,7 @@ Intel Core i7 10700K </a> <dd>
 <dt> GPU </dt>
 <dd> <a href="https://kakaku.com/item/K0001368177/">
 ELSA GeForce RTX 3060 S.A.C /L GD3060-12GERSH
- </a> [PCIExp 12GB]</dd>
+ </a> (PCIExp 12GB) </dd>
 
 <dt> OS </dt>
 <dd> <a href="https://kakaku.com/item/K0000800907/">
@@ -49,12 +49,12 @@ MSI MPG Z490 GAMING PLUS
 
 <dt> メモリー </dt>
 <dd> <a href="https://kakaku.com/item/K0001324094/">
-CFD Selection W4U3200CM-16GR </a> [DDR4 PC4-25600 16GB 2枚組] </dd>
+CFD Selection W4U3200CM-16GR </a> (DDR4 PC4-25600 16GB 2枚組) </dd>
 
 <dt> ケース </dt>
 <dd> <a href="https://kakaku.com/item/K0000719060/">
 Fractal Design Define R5 FD-CA-DEF-R5-WT
- </a> [White] </dd>
+ </a> (White) </dd>
 
 <dt> 電源 </dt>
 <dd> <a href="https://kakaku.com/item/K0001042498/">
@@ -98,7 +98,7 @@ StarTech.com 35FCREADBU3 </a> </dd>
 
 <dt> モニター </dt>
 <dd> <a href="https://kakaku.com/item/K0001120217/">
-NEC MultiSync LCD-EA271U-BK </a> x 2 (27インチ 4K 3840x2160 IPS) </dd>
+NEC MultiSync LCD-EA271U-BK </a> x 2 (27インチ 4K IPS) </dd>
 
 <dt> キーボード </dt>
 <dd> <a href="https://kakaku.com/item/K0000930416/">
@@ -114,7 +114,7 @@ AREA SD-U2MIC-Pi </a> </dd>
 
 <dt> Web カメラ </dt>
 <dd> <a href="https://kakaku.com/item/K0001151127/">
-Logicool Pro Stream Webcam C922n </a> [ブラック] </dd>
+Logicool Pro Stream Webcam C922n </a> </dd>
 
 <dt> USB-DAC </dt>
 <dd> <a href="https://kakaku.com/item/K0000588800/">
