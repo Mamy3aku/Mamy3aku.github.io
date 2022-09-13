@@ -2,6 +2,7 @@
   body {
     width: auto;
     font-size: 16px;
+    font-family: sans-serif;
   }
   ul {
     padding-left: 1.5em;
@@ -15,7 +16,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 700px;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: sans-serif;
   }
 }
 html {
@@ -43,7 +45,7 @@ dt {
 }
 
 h3::before {
-    content: '★';
+    content: '■';
 }
 h3 {
     background-color: #ff0000;
@@ -69,7 +71,6 @@ h4 {
 
 footer{
     color: #cccccc;
-    font-style: italic;
     background-color: #990099;
     text-align: center;
 }
