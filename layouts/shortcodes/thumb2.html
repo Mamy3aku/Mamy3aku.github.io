@@ -15,4 +15,4 @@
 
 {{ $thumbnailURL := $imageRes.RelPermalink }}
 
-<a href={{$originalURL}}><img src={{$thumbnailURL}} ></a>
+<a href={{$originalURL}}><img src={{$thumbnailURL}} style="aspect-ratio: {{$imageRes.Width}} / {{$imageRes.Height}}"></a>
