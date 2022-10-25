@@ -1,116 +1,13 @@
-<!doctype html><html lang=ja>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=icon type=image/x-icon href=/favicon.ico>
-<link rel=stylesheet href=/css/common.css>
-<title>foobar2000のカスタマイズ | mtzkのホームページ</title>
-</head>
-<body>
-<div style=text-align:center> <div id=title> mtzkのホームページ </div></div>
-<style type=text/css>#title{background:linear-gradient(to right,red,orange,#ff0,#13bd13,#248f8f,blue,purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-size:xx-large}</style>
-<nav>
-<ol class=breadcrumb>
-<li>
-<a href=https://Mamy3aku.github.io/>TOP</a>
-</li>
-<li>
-<a href=https://Mamy3aku.github.io/software-review/>ソフトウェアのレビュー</a>
-</li>
-<li>
-foobar2000のカスタマイズ
-</li>
-</ol>
-</nav>
-<style type=text/css>.breadcrumb{padding:0}.breadcrumb li{display:inline;list-style:none;margin-left:0;margin-right:0}.breadcrumb a{text-decoration:none}.breadcrumb li:not(:last-child)::after{content:'>';padding-top:0;padding-bottom:0;padding-left:.3em;padding-right:.3em}</style>
-<div>
-<h1>foobar2000のカスタマイズ</h1>
-</div>
-<div id=date>
-初版: <time datetime=2020-06-01T22:15:42JST>2020年06月01日 22時15分</time> <br>
-更新: <time datetime=2022-01-30T12:46:03JST>2022年01月30日 12時46分</time>
-</div>
-<div>
-<div style=margin:auto>
-<a href=foobar2000.png><img src=/software-review/foobar2000/foobar2000_hu22f64e64fae971178939786f5243eb3c_4270411_1000x1000_fit_q75_bgffffff_box_3.jpg style=aspect-ratio:1000/562></a>
-</div>
-<h3 id=foobar2000-とは>foobar2000 とは？</h3>
-<p><a href=https://www.foobar2000.org/>foobar2000 の公式ホームページ</a>
-(Download タブから落とせます)</p>
-<p>軽量でカスタマイズ範囲が広いWindows向けの音楽プレイヤーです。</p>
-<p>とにかく軽く、起動も一瞬で動作中もサクサク動きます。余計なバックグラウンドサービスも走りません。クリーンです。</p>
-<p>また、カスタマイズできる範囲が広く自分好みのインターフェースにしたり、アップサンプリング再生するプラグインでCD音源やMP3音源をハイレゾ化したりもできます。
-柔軟にカスタマイズできる分、設定にはある程度知識が必要となり初心者向けのソフトではないです。</p>
-<h4 id=良い点>良い点</h4>
-<ul>
-<li>シンプルで軽量</li>
-<li>自分好みにカスタマイズしやすい</li>
-<li>WASAPIやASIOでビットパーフェクトな出力ができる</li>
-</ul>
-<h4 id=悪い点>悪い点</h4>
-<ul>
-<li>使いやすくするにはある程度カスタマイズが必要</li>
-<li>iPhoneやAndroidなど外部機器との連携機能が弱い</li>
-</ul>
-<p>2点目の外部連携が弱いのは、必要ない機能が入っていないという点で、私にとってはむしろ嬉しいことです。</p>
-<h3 id=カスタマイズ>カスタマイズ</h3>
-<p>UIはトップに張った画像のようにしています。</p>
-<h4 id=入れているプラグイン>入れているプラグイン</h4>
-<ul>
-<li><a href=https://yuo.be/columns-ui>Column UI</a>
-ユーザーインターフェイスのカスタマイズ用プラグイン</li>
-<li><a href=http://foo2k.chottu.net/>EsPlaylist</a>
-アルバムジャケット一覧を表示するためのプラグイン</li>
-<li><a href=http://www.foobar2000.org/components/view/foo_playcount>Playback Statistics</a>
-曲ごとの再生数といった統計情報を記録</li>
-<li><a href=http://www.foobar2000.org/components/view/foo_out_wasapi>WASAPI output support</a>
-WASAPI 経由でビットパーフェクトな出力ができるようになる。ちなみに DAC は FOSTEX の HP-A4 を使っています。</li>
-</ul>
-<h4 id=レイアウト>レイアウト</h4>
-<p>レイアウトはこんな感じです。
-設定ファイルもおいておきます。Preferences => Columns UI の 「Import Configurations&mldr;」 からインポートして使ってください。</p>
-<p><a href=./shumatsu.fcl>設定ファイル</a></p>
-<div style=width:80%;margin:auto>
-<a href=layout.png><img src=/software-review/foobar2000/layout.png style=aspect-ratio:1232/953></a>
-</div>
-<h4 id=フェーディングをオフにする>フェーディングをオフにする</h4>
-<p>デフォルトだと曲の最初と最後がフェーディングするようになっていますが、これは必要ないのでオフにします。
-Playback => Output のスライドバーを左に寄せます(数値を直接編集することはできないみたい)。</p>
-<div style=width:80%;margin:auto>
-<a href=fading.png><img src=/software-review/foobar2000/fading.png style=aspect-ratio:1232/953></a>
-</div>
-<h4 id=出力先をすぐに切り替えられるようにする>出力先をすぐに切り替えられるようにする</h4>
-<p>出力先の WASAPI とプライマリーサウンドドライバー(PS)を簡単に切り替えられるようにします。
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon type=image/x-icon href=/favicon.ico><link rel=stylesheet href=/css/common.css><title>foobar2000のカスタマイズ | mtzkのホームページ</title></head><body><div style=text-align:center><div id=title>mtzkのホームページ</div></div><style type=text/css>#title{background:linear-gradient(to right,red,orange,#ff0,#13bd13,#248f8f,blue,purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-size:xx-large}</style><nav><ol class=breadcrumb><li><a href=https://Mamy3aku.github.io/>TOP</a></li><li><a href=https://Mamy3aku.github.io/software-review/>ソフトウェアのレビュー</a></li><li>foobar2000のカスタマイズ</li></ol></nav><style type=text/css>.breadcrumb{padding:0}.breadcrumb li{display:inline;list-style:none;margin-left:0;margin-right:0}.breadcrumb a{text-decoration:none}.breadcrumb li:not(:last-child)::after{content:'>';padding-top:0;padding-bottom:0;padding-left:.3em;padding-right:.3em}</style><div><h1>foobar2000のカスタマイズ</h1></div><div id=date>初版: <time datetime=2020-06-01T22:15:42JST>2020年06月01日 22時15分</time><br>更新: <time datetime=2022-01-30T12:46:03JST>2022年01月30日 12時46分</time></div><div><div style=margin:auto><a href=foobar2000.png><img src=/software-review/foobar2000/foobar2000_hu22f64e64fae971178939786f5243eb3c_4270411_1000x1000_fit_q75_h2_box_3.webp style=aspect-ratio:1000/562></a></div><h3 id=foobar2000-とは>foobar2000 とは？</h3><p><a href=https://www.foobar2000.org/>foobar2000 の公式ホームページ</a>
+(Download タブから落とせます)</p><p>軽量でカスタマイズ範囲が広いWindows向けの音楽プレイヤーです。</p><p>とにかく軽く、起動も一瞬で動作中もサクサク動きます。余計なバックグラウンドサービスも走りません。クリーンです。</p><p>また、カスタマイズできる範囲が広く自分好みのインターフェースにしたり、アップサンプリング再生するプラグインでCD音源やMP3音源をハイレゾ化したりもできます。
+柔軟にカスタマイズできる分、設定にはある程度知識が必要となり初心者向けのソフトではないです。</p><h4 id=良い点>良い点</h4><ul><li>シンプルで軽量</li><li>自分好みにカスタマイズしやすい</li><li>WASAPIやASIOでビットパーフェクトな出力ができる</li></ul><h4 id=悪い点>悪い点</h4><ul><li>使いやすくするにはある程度カスタマイズが必要</li><li>iPhoneやAndroidなど外部機器との連携機能が弱い</li></ul><p>2点目の外部連携が弱いのは、必要ない機能が入っていないという点で、私にとってはむしろ嬉しいことです。</p><h3 id=カスタマイズ>カスタマイズ</h3><p>UIはトップに張った画像のようにしています。</p><h4 id=入れているプラグイン>入れているプラグイン</h4><ul><li><a href=https://yuo.be/columns-ui>Column UI</a>
+ユーザーインターフェイスのカスタマイズ用プラグイン</li><li><a href=http://foo2k.chottu.net/>EsPlaylist</a>
+アルバムジャケット一覧を表示するためのプラグイン</li><li><a href=http://www.foobar2000.org/components/view/foo_playcount>Playback Statistics</a>
+曲ごとの再生数といった統計情報を記録</li><li><a href=http://www.foobar2000.org/components/view/foo_out_wasapi>WASAPI output support</a>
+WASAPI 経由でビットパーフェクトな出力ができるようになる。ちなみに DAC は FOSTEX の HP-A4 を使っています。</li></ul><h4 id=レイアウト>レイアウト</h4><p>レイアウトはこんな感じです。
+設定ファイルもおいておきます。Preferences => Columns UI の 「Import Configurations&mldr;」 からインポートして使ってください。</p><p><a href=./shumatsu.fcl>設定ファイル</a></p><div style=width:80%;margin:auto><a href=layout.png><img src=/software-review/foobar2000/layout.png style=aspect-ratio:1232/953></a></div><h4 id=フェーディングをオフにする>フェーディングをオフにする</h4><p>デフォルトだと曲の最初と最後がフェーディングするようになっていますが、これは必要ないのでオフにします。
+Playback => Output のスライドバーを左に寄せます(数値を直接編集することはできないみたい)。</p><div style=width:80%;margin:auto><a href=fading.png><img src=/software-review/foobar2000/fading.png style=aspect-ratio:1232/953></a></div><h4 id=出力先をすぐに切り替えられるようにする>出力先をすぐに切り替えられるようにする</h4><p>出力先の WASAPI とプライマリーサウンドドライバー(PS)を簡単に切り替えられるようにします。
 WASAPI で出力すると、排他モードなのでほかのソフトの音は一切聞こえなくなります。
 集中して聞きたいときは WASAPI、ゲームとか作業しながら聞きたいときは PS にすぐ切り替えられると便利なのでそうします。
 コントロールボタンの「P」と「W」で切り替えられるようにしています。
-手順も載せておきます。</p>
-<div style=width:80%;margin:auto>
-<a href=wasapi_button.png><img src=/software-review/foobar2000/wasapi_button.png style=aspect-ratio:904/300></a>
-</div>
-<ol>
-<li>Layout 中の Button の Configuration を開く</li>
-</ol>
-<div style=width:80%;margin:auto>
-<a href=button_config.png><img src=/software-review/foobar2000/button_config.png style=aspect-ratio:1232/953></a>
-</div>
-<ol start=2>
-<li>Add を開く</li>
-</ol>
-<div style=width:80%;margin:auto>
-<a href=button_config_add.png><img src=/software-review/foobar2000/button_config_add.png style=aspect-ratio:931/1169></a>
-</div>
-<ol start=3>
-<li>出力先を選択して OK をクリック</li>
-</ol>
-<div style=width:80%;margin:auto>
-<a href=button_config_devices.png><img src=/software-review/foobar2000/button_config_devices.png style=aspect-ratio:943/1195></a>
-</div>
-<p>これでボタンが追加されました。WASAPI と PS に対して同じ操作をすればいいです。</p>
-</div>
-<br>
-<footer>
-(C) 2022 mtzk
-</footer>
-</body>
-</html>
+手順も載せておきます。</p><div style=width:80%;margin:auto><a href=wasapi_button.png><img src=/software-review/foobar2000/wasapi_button.png style=aspect-ratio:904/300></a></div><ol><li>Layout 中の Button の Configuration を開く</li></ol><div style=width:80%;margin:auto><a href=button_config.png><img src=/software-review/foobar2000/button_config.png style=aspect-ratio:1232/953></a></div><ol start=2><li>Add を開く</li></ol><div style=width:80%;margin:auto><a href=button_config_add.png><img src=/software-review/foobar2000/button_config_add.png style=aspect-ratio:931/1169></a></div><ol start=3><li>出力先を選択して OK をクリック</li></ol><div style=width:80%;margin:auto><a href=button_config_devices.png><img src=/software-review/foobar2000/button_config_devices.png style=aspect-ratio:943/1195></a></div><p>これでボタンが追加されました。WASAPI と PS に対して同じ操作をすればいいです。</p></div><br><footer>(C) 2022 mtzk</footer></body></html>

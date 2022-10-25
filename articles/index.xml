@@ -8,8 +8,7 @@ ssh-keygen -t rsa これで、公開鍵(id_rsa.pub)と秘密鍵(id_rsa)のペア
 セキュリティ上は設定したほうが好ましいですが、いちいち打つのが面倒なので私はパスフレーズは設定しませんでした (もし、 PC を盗まれた場合に秘密鍵が漏れることになりますから、絶対に盗まれないようにするか、 BitLocker とかでドライブを暗号化しておくことをお勧めします)。
 ~/.ssh/config の設定 ~/.ssh/config に以下のように追記します(なければ作成してください)。
 Host はただの名前で好きなように決めてもらって構いません。
-重要なのは HostName と User と IdentityFile です。これを間違えると繋がりません。 ~/.ssh/config 1 2 3 4 Host github.com HostName github.com User shumatsu7 IdentityFile ~/.ssh/id_rsa
-GitHub 側の設定 GitHub の SSH and GPG keys にアクセス、「New SSH key」をクリックし、「Key」に id_rsa.pub の中身をコピペします。
+重要なのは HostName と User と IdentityFile です。これを間違えると繋がりません。 ~/.ssh/config 1 2 3 4 Host github.com HostName github.com User shumatsu7 IdentityFile ~/.ssh/id_rsa GitHub 側の設定 GitHub の SSH and GPG keys にアクセス、「New SSH key」をクリックし、「Key」に id_rsa.pub の中身をコピペします。
 Title はどの端末の公開鍵かわかるように適当につけてください。
 git のローカルリポジトリの設定 もし、今まで https でやり取りしていた場合、ssh が使われないので設定を変えます。 git のローカルリポジトリに移動し、</description></item><item><title>katex-test</title><link>https://Mamy3aku.github.io/articles/katex_test/</link><pubDate>Sun, 05 Jul 2020 00:06:51 +0900</pubDate><guid>https://Mamy3aku.github.io/articles/katex_test/</guid><description>$$ f(x)= ∑_{k=0}^{∞} \frac{ f^{(k)}(x_0)}{n!} \left( x-x_0 \right)^k $$</description></item><item><title>NEC MultiSync EA271U をハードウェアキャリブレーションしてみる</title><link>https://Mamy3aku.github.io/articles/ea271u_calibration/</link><pubDate>Sun, 28 Jun 2020 00:06:51 +0900</pubDate><guid>https://Mamy3aku.github.io/articles/ea271u_calibration/</guid><description>EA271U の簡単なレビュー キャリブレーションの前に簡単にレビューを書いておきます。
 最近はもっと安くて写りもそんなに悪くないディスプレイがたくさんありますが、普段から使うものなので奮発して NEC のディスプレイを買いました。

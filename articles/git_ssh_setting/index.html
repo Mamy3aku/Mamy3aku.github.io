@@ -1,83 +1,13 @@
-<!doctype html><html lang=ja>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=icon type=image/x-icon href=/favicon.ico>
-<link rel=stylesheet href=/css/common.css>
-<title>GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法 | mtzkのホームページ</title>
-</head>
-<body>
-<div style=text-align:center> <div id=title> mtzkのホームページ </div></div>
-<style type=text/css>#title{background:linear-gradient(to right,red,orange,#ff0,#13bd13,#248f8f,blue,purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-size:xx-large}</style>
-<nav>
-<ol class=breadcrumb>
-<li>
-<a href=https://Mamy3aku.github.io/>TOP</a>
-</li>
-<li>
-<a href=https://Mamy3aku.github.io/articles/>パソコンとかデジタル機器</a>
-</li>
-<li>
-GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法
-</li>
-</ol>
-</nav>
-<style type=text/css>.breadcrumb{padding:0}.breadcrumb li{display:inline;list-style:none;margin-left:0;margin-right:0}.breadcrumb a{text-decoration:none}.breadcrumb li:not(:last-child)::after{content:'>';padding-top:0;padding-bottom:0;padding-left:.3em;padding-right:.3em}</style>
-<div>
-<h1>GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法</h1>
-</div>
-<div id=date>
-初版: <time datetime=2020-07-05T00:06:51JST>2020年07月05日 00時06分</time> <br>
-更新: <time datetime=2022-01-30T12:46:03JST>2022年01月30日 12時46分</time>
-</div>
-<div>
-<p>GitHub から pull したり、 push したりするときにいちいちユーザーID とパスワードを打つのが面倒なので、ssh の秘密鍵と公開鍵を使ってログインできるように設定します。</p>
-<h4 id=公開鍵と秘密鍵の作成>公開鍵と秘密鍵の作成</h4>
-<p>~/.ssh ディレクトリを作り、そこに移動し以下のコマンドを実行してください。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh>ssh-keygen -t rsa
-</code></pre></div><p>これで、公開鍵(id_rsa.pub)と秘密鍵(id_rsa)のペアを作成します。<br>
-途中でパスフレーズを設定すると、この鍵のペアを使ってログインするときにパスフレーズの入力が必要になります。<br>
-セキュリティ上は設定したほうが好ましいですが、いちいち打つのが面倒なので私はパスフレーズは設定しませんでした
-(もし、 PC を盗まれた場合に秘密鍵が漏れることになりますから、絶対に盗まれないようにするか、 BitLocker とかでドライブを暗号化しておくことをお勧めします)。</p>
-<h4 id=sshconfig-の設定>~/.ssh/config の設定</h4>
-<p>~/.ssh/config に以下のように追記します(なければ作成してください)。<br>
-Host はただの名前で好きなように決めてもらって構いません。<br>
-重要なのは HostName と User と IdentityFile です。これを間違えると繋がりません。
-<figure class=xCodeBlock>
-<figcaption class=xCodeBlock_title>~/.ssh/config</figcaption>
-<div class=xCodeBlock_code><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh>Host github.com
-    HostName github.com
-    User shumatsu7
-    IdentityFile ~/.ssh/id_rsa</code></pre></td></tr></table>
-</div>
-</div></div>
-</figure></p>
-<h4 id=github-側の設定>GitHub 側の設定</h4>
-<p><a href=https://github.com/settings/keys>GitHub の SSH and GPG keys</a> にアクセス、「New SSH key」をクリックし、「Key」に id_rsa.pub の中身をコピペします。<br>
-Title はどの端末の公開鍵かわかるように適当につけてください。</p>
-<div style=width:70%;margin:auto>
-<a href=github_ssh_key.png><img src=/articles/git_ssh_setting/github_ssh_key.png style=aspect-ratio:1837/1116></a>
-</div>
-<h4 id=git-のローカルリポジトリの設定>git のローカルリポジトリの設定</h4>
-<p>もし、今まで https でやり取りしていた場合、ssh が使われないので設定を変えます。
-git のローカルリポジトリに移動し、</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh>git remote set-url git@github.com:<span style=color:#f92672>[</span>GitHub のユーザID<span style=color:#f92672>]</span>/<span style=color:#f92672>[</span>リモートリポジトリ名<span style=color:#f92672>]</span>.git
-</code></pre></div><p>とします。
-これで pull とか push するときにパスワードを聞かれなくなるはずです。</p>
-<h4 id=さくらの設定>さくらの設定</h4>
-<p>ちなみに、さくらサーバーの場合はダッシュボードからか、サーバーの ~/.ssh/authorized_keys に公開鍵(id_rsa.pub)を追記することでも登録できます。</p>
-</div>
-<br>
-<footer>
-(C) 2022 mtzk
-</footer>
-</body>
-</html>
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon type=image/x-icon href=/favicon.ico><link rel=stylesheet href=/css/common.css><title>GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法 | mtzkのホームページ</title></head><body><div style=text-align:center><div id=title>mtzkのホームページ</div></div><style type=text/css>#title{background:linear-gradient(to right,red,orange,#ff0,#13bd13,#248f8f,blue,purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-size:xx-large}</style><nav><ol class=breadcrumb><li><a href=https://Mamy3aku.github.io/>TOP</a></li><li><a href=https://Mamy3aku.github.io/articles/>パソコンとかデジタル機器</a></li><li>GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法</li></ol></nav><style type=text/css>.breadcrumb{padding:0}.breadcrumb li{display:inline;list-style:none;margin-left:0;margin-right:0}.breadcrumb a{text-decoration:none}.breadcrumb li:not(:last-child)::after{content:'>';padding-top:0;padding-bottom:0;padding-left:.3em;padding-right:.3em}</style><div><h1>GitHub に ssh の公開鍵と秘密鍵を設定して接続する方法</h1></div><div id=date>初版: <time datetime=2020-07-05T00:06:51JST>2020年07月05日 00時06分</time><br>更新: <time datetime=2022-01-30T12:46:03JST>2022年01月30日 12時46分</time></div><div><p>GitHub から pull したり、 push したりするときにいちいちユーザーID とパスワードを打つのが面倒なので、ssh の秘密鍵と公開鍵を使ってログインできるように設定します。</p><h4 id=公開鍵と秘密鍵の作成>公開鍵と秘密鍵の作成</h4><p>~/.ssh ディレクトリを作り、そこに移動し以下のコマンドを実行してください。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>ssh-keygen -t rsa
+</span></span></code></pre></div><p>これで、公開鍵(id_rsa.pub)と秘密鍵(id_rsa)のペアを作成します。<br>途中でパスフレーズを設定すると、この鍵のペアを使ってログインするときにパスフレーズの入力が必要になります。<br>セキュリティ上は設定したほうが好ましいですが、いちいち打つのが面倒なので私はパスフレーズは設定しませんでした
+(もし、 PC を盗まれた場合に秘密鍵が漏れることになりますから、絶対に盗まれないようにするか、 BitLocker とかでドライブを暗号化しておくことをお勧めします)。</p><h4 id=sshconfig-の設定>~/.ssh/config の設定</h4><p>~/.ssh/config に以下のように追記します(なければ作成してください)。<br>Host はただの名前で好きなように決めてもらって構いません。<br>重要なのは HostName と User と IdentityFile です。これを間違えると繋がりません。<figure class=xCodeBlock><figcaption class=xCodeBlock_title>~/.ssh/config</figcaption><div class=xCodeBlock_code><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>Host github.com
+</span></span><span style=display:flex><span>    HostName github.com
+</span></span><span style=display:flex><span>    User shumatsu7
+</span></span><span style=display:flex><span>    IdentityFile ~/.ssh/id_rsa</span></span></code></pre></td></tr></table></div></div></div></figure></p><h4 id=github-側の設定>GitHub 側の設定</h4><p><a href=https://github.com/settings/keys>GitHub の SSH and GPG keys</a> にアクセス、「New SSH key」をクリックし、「Key」に id_rsa.pub の中身をコピペします。<br>Title はどの端末の公開鍵かわかるように適当につけてください。</p><div style=width:70%;margin:auto><a href=github_ssh_key.png><img src=/articles/git_ssh_setting/github_ssh_key.png style=aspect-ratio:1837/1116></a></div><h4 id=git-のローカルリポジトリの設定>git のローカルリポジトリの設定</h4><p>もし、今まで https でやり取りしていた場合、ssh が使われないので設定を変えます。
+git のローカルリポジトリに移動し、</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>git remote set-url git@github.com:<span style=color:#f92672>[</span>GitHub のユーザID<span style=color:#f92672>]</span>/<span style=color:#f92672>[</span>リモートリポジトリ名<span style=color:#f92672>]</span>.git
+</span></span></code></pre></div><p>とします。
+これで pull とか push するときにパスワードを聞かれなくなるはずです。</p><h4 id=さくらの設定>さくらの設定</h4><p>ちなみに、さくらサーバーの場合はダッシュボードからか、サーバーの ~/.ssh/authorized_keys に公開鍵(id_rsa.pub)を追記することでも登録できます。</p></div><br><footer>(C) 2022 mtzk</footer></body></html>
