@@ -9,21 +9,6 @@ tag: [ "自作PC", "パソコン" ]
 ### コンセプト
 ケースは明るい色が好きなので Define 7 のホワイトにしました。
 
-
-<!-- <div style="display:flex">
-    <div style="width: 50%; margin: 10px;">
-    {{< thumb2 "front.jpg" >}}
-    </div>
-    <div style="width: 50%; margin: 10px;">
-    {{< thumb2 "front_open.jpg" >}}
-    </div>
-</div>
-
-ケースの中はこんな感じです。
-<div style="width: 80%; margin: auto;">
-{{< thumb2 "inner_new.jpg" >}}
-</div> -->
-
 </p>
 
 <div id="machine1">
