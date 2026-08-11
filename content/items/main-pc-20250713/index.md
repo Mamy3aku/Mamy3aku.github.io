@@ -1,6 +1,6 @@
 ---
 title: "自作メインマシン ver.2025.07.13"
-date: 2025-07-13T00:11:12+09:00
+date: 2026-08-11T14:30:30+09:00
 draft: false 
 weight: 1
 tag: [ "自作PC", "パソコン" ]
@@ -80,15 +80,19 @@ Microsoft Pro IntelliMouse </a> </dd>
 Logicool Pro Stream Webcam C922n </a> </dd>
 
 <dt> USB-DAC </dt>
-<dd> <a href="https://kakaku.com/item/K0000588800/">
-FOSTEX HP-A4 </a> </dd>
+<dd> <a href="https://kakaku.com/item/K0001491494/">
+FiiO K7 FIO-K7 </a> </dd>
 
 <dt> ヘッドホン </dt>
-<dd> <a href="https://kakaku.com/item/K0000535340/">
-AKG K712 PRO </a> </dd>
+<dd> <a href="https://kakaku.com/item/K0000915106/">
+ゼンハイザー HD 598 SE </a> </dd>
 
-<dt> イヤホン </dt>
-<dd> <a href="https://kakaku.com/item/K0000157591/">
-オーディオテクニカ ATH-CM707 </a> </dd>
+<dt> イヤホン（音楽用） </dt>
+<dd> <a href="https://kakaku.com/item/J0000040390/">
+NOBUNAGA Labs 鶯 NLN-UGS </a> (シルバー) </dd>
+
+<dt> イヤホン（リモートワーク用） </dt>
+<dd> <a href="https://kakaku.com/item/J0000009991/">
+オーディオテクニカ JUICY ATH-J100 </a> (ブラック) </dd>
 
 </div>
