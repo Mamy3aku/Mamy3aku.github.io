@@ -2,11 +2,10 @@
 {{ partial "breadcrumb.html" . }}
 <main class="peggy">
   <h1>{{ .Title }}</h1>
-  <p class="peggy-note">このページの画像と説明はダミーです。実物の写真や管理人の所蔵品を示すものではありません。</p>
   {{ $image := .Resources.GetMatch .Params.image }}
   <figure class="peggy-detail-image">
-    <img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の仮イラスト" width="300" height="220">
-    <figcaption>仮イラスト</figcaption>
+    <img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の画像" width="300" height="220">
+    <figcaption>グッズの画像</figcaption>
   </figure>
   <dl class="peggy-detail-meta">
     <dt>種類</dt><dd>{{ .Params.category }}</dd>

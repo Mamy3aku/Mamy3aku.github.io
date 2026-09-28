@@ -10,7 +10,6 @@
 
   <section aria-labelledby="peggy-goods">
     <h2 id="peggy-goods">グッズ紹介</h2>
-    <p class="peggy-note">現在の3件は表示例です。画像と説明は仮のもので、管理人の所蔵品を示すものではありません。</p>
     <p class="peggy-scroll-hint">一覧は左右にスクロールできます。画像をタップしても詳細ページを開けます。</p>
 
     {{ $goods := slice }}
@@ -28,7 +27,7 @@
         {{ range .RegularPages.ByWeight }}
         {{ $image := .Resources.GetMatch .Params.image }}
         <tr>
-          <td><a href="{{ .RelPermalink }}" aria-label="{{ .Title }}の詳細を見る"><img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の仮イラスト" width="68" height="68"></a></td>
+          <td><a href="{{ .RelPermalink }}" aria-label="{{ .Title }}の詳細を見る"><img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の画像" width="68" height="68"></a></td>
           <td>{{ .Title }}</td>
           <td>{{ .Params.production_year }}</td>
           <td>{{ .Params.acquired_date }}</td>
