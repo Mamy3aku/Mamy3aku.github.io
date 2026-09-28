@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/common.css">
+  {{ if eq .Section "pyc" }}
+    <link rel="stylesheet" href="{{ "css/pyc-tables.css" | relURL }}">
+  {{ end }}
   {{ if eq .Section "peggy-pop" }}
     <link rel="stylesheet" href="{{ "peggy-pop/peggy.css" | relURL }}">
     {{ if .IsSection }}

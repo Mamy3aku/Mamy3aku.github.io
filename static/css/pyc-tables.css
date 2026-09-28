@@ -1,0 +1,35 @@
+.pyc-entry {
+  margin-bottom: 1.5rem;
+}
+
+.pyc-word {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.pyc-tables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  overflow-x: auto;
+}
+
+.pyc-table {
+  border-collapse: collapse;
+  width: max-content;
+}
+
+.pyc-table caption {
+  font-weight: bold;
+  text-align: left;
+}
+
+.pyc-table td {
+  border: 1px solid #333;
+  padding: 0.2rem 0.4rem;
+  vertical-align: top;
+}
+
+.pyc-table td:first-child {
+  font-weight: bold;
+}

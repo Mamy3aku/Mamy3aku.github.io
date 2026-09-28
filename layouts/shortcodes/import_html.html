@@ -1,4 +1,0 @@
-{{ .Inner }}
-{{ $originalURL := .Get 0 }}
-{{ $htmlRes := .Page.Resources.GetMatch $originalURL }}
-{{ $htmlRes.Content | safeHTML }}

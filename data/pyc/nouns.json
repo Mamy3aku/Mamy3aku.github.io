@@ -1,0 +1,837 @@
+{
+  "entries": [
+    {
+      "heading": "стака'н",
+      "notes": [
+        "glass"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "стака'н",
+              "стака'ны"
+            ],
+            [
+              "genitive",
+              "стака'на",
+              "стака'нов"
+            ],
+            [
+              "dative",
+              "стака'ну",
+              "стака'нам"
+            ],
+            [
+              "accusative",
+              "стака'н",
+              "стака'ны"
+            ],
+            [
+              "instrumental",
+              "стака'ном",
+              "стака'нами"
+            ],
+            [
+              "prepositional",
+              "стака'не",
+              "стака'нах"
+            ]
+          ]
+        }
+      ],
+      "detail": "male, inanimate"
+    },
+    {
+      "heading": "студе'нт",
+      "notes": [
+        "student"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "студе'нт",
+              "студе'нты"
+            ],
+            [
+              "genitive",
+              "студе'нта",
+              "студе'нтов"
+            ],
+            [
+              "dative",
+              "студе'нту",
+              "студе'нтам"
+            ],
+            [
+              "accusative",
+              "студе'нта",
+              "студе'нтов"
+            ],
+            [
+              "instrumental",
+              "студе'нтом",
+              "студе'нтами"
+            ],
+            [
+              "prepositional",
+              "студе'нте",
+              "студе'нтах"
+            ]
+          ]
+        }
+      ],
+      "detail": "male, animate"
+    },
+    {
+      "heading": "стол",
+      "notes": [
+        "table, desk, board; diet, cooking, cuisine; department, section"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "сто'л",
+              "столы'"
+            ],
+            [
+              "genitive",
+              "стола'",
+              "столо'в"
+            ],
+            [
+              "dative",
+              "столу'",
+              "стола'м"
+            ],
+            [
+              "accusative",
+              "сто'л",
+              "столы'"
+            ],
+            [
+              "instrumental",
+              "столо'м",
+              "стола'ми"
+            ],
+            [
+              "prepositional",
+              "столе'",
+              "стола'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "male, inanimate"
+    },
+    {
+      "heading": "стул",
+      "notes": [
+        "chair, stool"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "сту'л",
+              "сту'лья"
+            ],
+            [
+              "genitive",
+              "сту'ла",
+              "сту'льев"
+            ],
+            [
+              "dative",
+              "сту'лу",
+              "сту'льям"
+            ],
+            [
+              "accusative",
+              "сту'л",
+              "сту'лья"
+            ],
+            [
+              "instrumental",
+              "сту'лом",
+              "сту'льями"
+            ],
+            [
+              "prepositional",
+              "сту'ле",
+              "сту'льях"
+            ]
+          ]
+        }
+      ],
+      "detail": "male, inanimate"
+    },
+    {
+      "heading": "музе'й",
+      "notes": [
+        "museum"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "музе'й",
+              "музе'и"
+            ],
+            [
+              "genitive",
+              "музе'я",
+              "музе'ев"
+            ],
+            [
+              "dative",
+              "музе'ю",
+              "музе'ям"
+            ],
+            [
+              "accusative",
+              "музе'й",
+              "музе'и"
+            ],
+            [
+              "instrumental",
+              "музе'ем",
+              "музе'ями"
+            ],
+            [
+              "prepositional",
+              "музе'е",
+              "музе'ях"
+            ]
+          ]
+        }
+      ],
+      "detail": "male, inanimate"
+    },
+    {
+      "heading": "портфе'ль",
+      "notes": [
+        "briefcase, bag, portfolio"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "портфе'ль",
+              "портфе'ли"
+            ],
+            [
+              "genitive",
+              "портфе'ля",
+              "портфе'лей"
+            ],
+            [
+              "dative",
+              "портфе'лю",
+              "портфе'лям"
+            ],
+            [
+              "accusative",
+              "портфе'ль",
+              "портфе'ли"
+            ],
+            [
+              "instrumental",
+              "портфе'лем",
+              "портфе'лями"
+            ],
+            [
+              "prepositional",
+              "портфе'ле",
+              "портфе'лях"
+            ]
+          ]
+        }
+      ],
+      "detail": "male, inanimate"
+    },
+    {
+      "heading": "ко'мната",
+      "notes": [
+        "room"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "ко'мната",
+              "ко'мнаты"
+            ],
+            [
+              "genitive",
+              "ко'мнаты",
+              "ко'мнат"
+            ],
+            [
+              "dative",
+              "ко'мнате",
+              "ко'мнатам"
+            ],
+            [
+              "accusative",
+              "ко'мнату",
+              "ко'мнаты"
+            ],
+            [
+              "instrumental",
+              "ко'мнатой, ко'мнатою",
+              "ко'мнатами"
+            ],
+            [
+              "prepositional",
+              "ко'мнате",
+              "ко'мнатах"
+            ]
+          ]
+        }
+      ],
+      "detail": "female, inanimate"
+    },
+    {
+      "heading": "неде'ля",
+      "notes": [
+        "week"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "неде'ля",
+              "неде'ли"
+            ],
+            [
+              "genitive",
+              "неде'ли",
+              "неде'ль"
+            ],
+            [
+              "dative",
+              "неде'ле",
+              "неде'лям"
+            ],
+            [
+              "accusative",
+              "неде'лю",
+              "неде'ли"
+            ],
+            [
+              "instrumental",
+              "неде'лей, неде'лею",
+              "неде'лями"
+            ],
+            [
+              "prepositional",
+              "неде'ле",
+              "неде'лях"
+            ]
+          ]
+        }
+      ],
+      "detail": "female, inanimate"
+    },
+    {
+      "heading": "компа'ния",
+      "notes": [
+        "company"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "компа'ния",
+              "компа'нии"
+            ],
+            [
+              "genitive",
+              "компа'нии",
+              "компа'ний"
+            ],
+            [
+              "dative",
+              "компа'нии",
+              "компа'ниям"
+            ],
+            [
+              "accusative",
+              "компа'нию",
+              "компа'нии"
+            ],
+            [
+              "instrumental",
+              "компа'нией, компа'ниею",
+              "компа'ниями"
+            ],
+            [
+              "prepositional",
+              "компа'нии",
+              "компа'ниях"
+            ]
+          ]
+        }
+      ],
+      "detail": "female, inanimate"
+    },
+    {
+      "heading": "тетра'дь",
+      "notes": [
+        "notebook, writing-book, exercise-book, copy-book, part"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "тетра'дь",
+              "тетра'ди"
+            ],
+            [
+              "genitive",
+              "тетра'ди",
+              "тетра'дей"
+            ],
+            [
+              "dative",
+              "тетра'ди",
+              "тетра'дям"
+            ],
+            [
+              "accusative",
+              "тетра'дь",
+              "тетра'ди"
+            ],
+            [
+              "instrumental",
+              "тетра'дью",
+              "тетра'дями"
+            ],
+            [
+              "prepositional",
+              "тетра'ди",
+              "тетра'дях"
+            ]
+          ]
+        }
+      ],
+      "detail": "female, inanimate"
+    },
+    {
+      "heading": "дочь",
+      "notes": [
+        "daughter"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "до'чь",
+              "до'чери"
+            ],
+            [
+              "genitive",
+              "до'чери",
+              "дочере'й"
+            ],
+            [
+              "dative",
+              "до'чери",
+              "дочеря'м"
+            ],
+            [
+              "accusative",
+              "до'чь",
+              "дочере'й"
+            ],
+            [
+              "instrumental",
+              "до'черью",
+              "дочерьми', дочеря'ми"
+            ],
+            [
+              "prepositional",
+              "до'чери",
+              "дочеря'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "female, animate"
+    },
+    {
+      "heading": "любо'вь",
+      "notes": [
+        "love"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "любо'вь",
+              "любви'"
+            ],
+            [
+              "genitive",
+              "любви'",
+              "любве'й"
+            ],
+            [
+              "dative",
+              "любви'",
+              "любвя'м"
+            ],
+            [
+              "accusative",
+              "любо'вь",
+              "любви'"
+            ],
+            [
+              "instrumental",
+              "любо'вью",
+              "любвя'ми"
+            ],
+            [
+              "prepositional",
+              "любви'",
+              "любвя'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "female, inanimate"
+    },
+    {
+      "heading": "ме'сто",
+      "notes": [
+        "place, spot, site, locality; region, area; site, scene; room, space; job, position; piece of luggage"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "ме'сто",
+              "места'"
+            ],
+            [
+              "genitive",
+              "ме'ста",
+              "ме'ст"
+            ],
+            [
+              "dative",
+              "ме'сту",
+              "места'м"
+            ],
+            [
+              "accusative",
+              "ме'сто",
+              "места'"
+            ],
+            [
+              "instrumental",
+              "ме'стом",
+              "места'ми"
+            ],
+            [
+              "prepositional",
+              "ме'сте",
+              "места'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "neuter, inanimate"
+    },
+    {
+      "heading": "мо'ре",
+      "notes": [
+        "sea, ocean"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "мо'ре",
+              "моря'"
+            ],
+            [
+              "genitive",
+              "мо'ря",
+              "море'й"
+            ],
+            [
+              "dative",
+              "мо'рю",
+              "моря'м"
+            ],
+            [
+              "accusative",
+              "мо'ре",
+              "моря'"
+            ],
+            [
+              "instrumental",
+              "мо'рем",
+              "моря'ми"
+            ],
+            [
+              "prepositional",
+              "мо'ре",
+              "моря'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "neuter, inanimate"
+    },
+    {
+      "heading": "и'мя",
+      "notes": [
+        "name, first name; reputation; noun"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "и'мя",
+              "имена'"
+            ],
+            [
+              "genitive",
+              "и'мени",
+              "имён"
+            ],
+            [
+              "dative",
+              "и'мени",
+              "имена'м"
+            ],
+            [
+              "accusative",
+              "и'мя",
+              "имена'"
+            ],
+            [
+              "instrumental",
+              "и'менем",
+              "имена'ми"
+            ],
+            [
+              "prepositional",
+              "и'мени",
+              "имена'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "neuter, inanimate"
+    },
+    {
+      "heading": "вре'мя",
+      "notes": [
+        "time, times, tense"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "вре'мя",
+              "времена'"
+            ],
+            [
+              "genitive",
+              "вре'мени",
+              "времён"
+            ],
+            [
+              "dative",
+              "вре'мени",
+              "времена'м"
+            ],
+            [
+              "accusative",
+              "вре'мя",
+              "времена'"
+            ],
+            [
+              "instrumental",
+              "вре'менем",
+              "времена'ми"
+            ],
+            [
+              "prepositional",
+              "вре'мени",
+              "времена'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "neuter, inanimate"
+    },
+    {
+      "heading": "по'ле",
+      "notes": [
+        "field, ground, margin, brim"
+      ],
+      "tables": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "",
+              "Singular",
+              "Plural"
+            ],
+            [
+              "nominative",
+              "по'ле",
+              "поля'"
+            ],
+            [
+              "genitive",
+              "по'ля",
+              "поле'й"
+            ],
+            [
+              "dative",
+              "по'лю",
+              "поля'м"
+            ],
+            [
+              "accusative",
+              "по'ле",
+              "поля'"
+            ],
+            [
+              "instrumental",
+              "по'лем",
+              "поля'ми"
+            ],
+            [
+              "prepositional",
+              "по'ле",
+              "поля'х"
+            ]
+          ]
+        }
+      ],
+      "detail": "neuter, inanimate"
+    }
+  ]
+}

@@ -5,4 +5,4 @@ draft: False
 ---
 
 
-{{< import_html "adjectives.html" >}}
+{{< pyc_table "adjectives" >}}

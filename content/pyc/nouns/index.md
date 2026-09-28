@@ -6,6 +6,6 @@ draft: False
 
 
 人称代名詞
-{{< import_html "nouns.html" >}}
+{{< pyc_table "nouns" >}}
 
-{{< import_html "ya.html" >}}
+{{< pyc_table "ya" >}}

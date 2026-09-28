@@ -1,0 +1,22 @@
+{{- $name := .Get 0 -}}
+{{- with index hugo.Data.pyc $name -}}
+  {{- range .entries }}
+  {{- $entry := . -}}
+  <section class="pyc-entry">
+    {{- with .heading }}<p><span class="pyc-word">{{ . }}</span>{{ with $entry.detail }} {{ . }}{{ end }}</p>{{ end -}}
+    {{- range .notes }}<p>{{ . }}</p>{{ end -}}
+    <div class="pyc-tables">
+      {{- range .tables }}
+      <table class="pyc-table">
+        {{- with .caption }}<caption>{{ . }}</caption>{{ end -}}
+        {{- range .rows }}
+        <tr>{{ range . }}<td>{{ . }}</td>{{ end }}</tr>
+        {{- end }}
+      </table>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+{{- else -}}
+  {{- errorf "Missing pyc table data %q" $name -}}
+{{- end -}}
