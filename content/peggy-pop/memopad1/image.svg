@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" role="img" aria-label="貯金箱の仮イラスト">
+  <rect width="300" height="220" rx="18" fill="#e9f5ff"/>
+  <circle cx="150" cy="58" r="26" fill="#ffd96b" stroke="#775b2d" stroke-width="3"/>
+  <path d="M150 46v24m-11-18h17q8 0 8 6t-8 6h-17" fill="none" stroke="#775b2d" stroke-width="3"/>
+  <rect x="76" y="89" width="148" height="88" rx="36" fill="#8ac9e6" stroke="#265a78" stroke-width="4"/>
+  <rect x="127" y="96" width="46" height="5" rx="2" fill="#265a78"/>
+  <rect x="92" y="169" width="25" height="12" rx="3" fill="#265a78"/>
+  <rect x="183" y="169" width="25" height="12" rx="3" fill="#265a78"/>
+  <text x="150" y="204" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#17445e">SAMPLE・仮画像</text>
+</svg>
