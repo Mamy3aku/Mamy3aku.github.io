@@ -6,7 +6,6 @@
   <section aria-labelledby="peggy-about">
     <h2 id="peggy-about">Peggy Pop について</h2>
     {{ .Content }}
-    <p class="peggy-source">参考：<a href="https://ameblo.jp/knot-a-toy/entry-12109826118.html">おもちゃ屋 KNot a TOY「ファンシーペンギン♪ペギーポップ♪」</a></p>
   </section>
 
   <section aria-labelledby="peggy-goods">
@@ -16,22 +15,23 @@
 
     {{ $goods := slice }}
     {{ range .RegularPages.ByWeight }}
-      {{ $goods = $goods | append (dict "name" .Title "category" .Params.category "description" .Params.summary "image" (.Params.image | relURL) "url" .RelPermalink) }}
+      {{ $image := .Resources.GetMatch .Params.image }}
+      {{ $goods = $goods | append (dict "name" .Title "productionYear" .Params.production_year "acquiredDate" .Params.acquired_date "image" $image.RelPermalink "url" .RelPermalink) }}
     {{ end }}
     <script id="peggy-goods-data" type="application/json">{{ $goods | jsonify | safeJS }}</script>
 
     <div id="peggy-grid" aria-label="Peggy Pop グッズ一覧"></div>
     <table id="peggy-fallback" class="peggy-fallback">
       <caption>グッズ一覧（サンプル）</caption>
-      <thead><tr><th scope="col">画像</th><th scope="col">品名</th><th scope="col">種類</th><th scope="col">説明</th><th scope="col">詳細</th></tr></thead>
+      <thead><tr><th scope="col">画像</th><th scope="col">品名</th><th scope="col">製造年</th><th scope="col">入手日</th></tr></thead>
       <tbody>
         {{ range .RegularPages.ByWeight }}
+        {{ $image := .Resources.GetMatch .Params.image }}
         <tr>
-          <td><a href="{{ .RelPermalink }}" aria-label="{{ .Title }}の詳細を見る"><img src="{{ .Params.image | relURL }}" alt="{{ .Params.category }}の仮イラスト" width="68" height="68"></a></td>
+          <td><a href="{{ .RelPermalink }}" aria-label="{{ .Title }}の詳細を見る"><img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の仮イラスト" width="68" height="68"></a></td>
           <td>{{ .Title }}</td>
-          <td>{{ .Params.category }}</td>
-          <td>{{ .Params.summary }}</td>
-          <td><a href="{{ .RelPermalink }}">詳細を見る</a></td>
+          <td>{{ .Params.production_year }}</td>
+          <td>{{ .Params.acquired_date }}</td>
         </tr>
         {{ end }}
       </tbody>
@@ -39,8 +39,10 @@
   </section>
 
   <section aria-labelledby="peggy-links">
-    <h2 id="peggy-links">関連リンク</h2>
-    <p>リンク準備中です。</p>
+    <h2 id="peggy-links">参考リンク</h2>
+    <ul>
+      <li><a href="https://hellokitty.fandom.com/wiki/Peggy_Pop">Peggy Pop | Hello Kitty Wiki | Fandom</a></li>
+    </ul>
   </section>
 </main>
 <script defer src="{{ "peggy-pop/vendor/tabulator.min.js" | relURL }}"></script>

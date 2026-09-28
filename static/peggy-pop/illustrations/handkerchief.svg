@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" role="img" aria-label="ハンカチの仮イラスト">
-  <rect width="300" height="220" rx="18" fill="#f3f9ec"/>
-  <path d="M83 42h134v134H83z" fill="#fffdf3" stroke="#558771" stroke-width="5"/>
-  <path d="M96 55h108v108H96z" fill="none" stroke="#a0c9ae" stroke-width="3" stroke-dasharray="8 5"/>
-  <circle cx="150" cy="109" r="26" fill="#b7d8c2"/>
-  <path d="M138 109h24m-12-12v24" stroke="#558771" stroke-width="4" stroke-linecap="round"/>
-  <text x="150" y="204" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#3b6954">SAMPLE・仮画像</text>
-</svg>
