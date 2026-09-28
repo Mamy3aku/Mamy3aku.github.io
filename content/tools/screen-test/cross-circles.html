@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>十字・同心円 画面テストツール</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    height: 100%;
+  }
+  canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #panel {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font: 12px/1.6 -apple-system, "Segoe UI", Meiryo, sans-serif;
+    padding: 10px 12px;
+    border-radius: 6px;
+    user-select: none;
+  }
+  #panel.hidden {
+    display: none;
+  }
+  #panel label {
+    display: block;
+    white-space: nowrap;
+    margin: 4px 0;
+  }
+  #panel input[type="number"] {
+    width: 60px;
+  }
+  #panel input[type="color"] {
+    vertical-align: middle;
+  }
+  #info {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    white-space: pre;
+  }
+  #panel button {
+    margin-top: 6px;
+  }
+  #hint {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.6);
+    font: 11px/1.4 -apple-system, "Segoe UI", Meiryo, sans-serif;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<div id="panel">
+  <label>十字の太さ(偶数px): <input type="number" id="thickness" value="2" min="2" step="2"></label>
+  <label>同心円の間隔(px): <input type="number" id="step" value="40" min="1"></label>
+  <label>背景色: <input type="color" id="bgColor" value="#000000"></label>
+  <label>十字の色: <input type="color" id="crossColor" value="#ff0000"></label>
+  <label>円の色: <input type="color" id="circleColor" value="#00ff00"></label>
+  <label><input type="checkbox" id="showCross" checked> 十字を表示</label>
+  <label><input type="checkbox" id="showCircles" checked> 同心円を表示</label>
+  <div id="info"></div>
+  <button id="fullscreenBtn" type="button">全画面表示</button>
+</div>
+<div id="hint">H: パネル表示/非表示</div>
+
+<script>
+(() => {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+
+  const panel = document.getElementById('panel');
+  const thicknessInput = document.getElementById('thickness');
+  const stepInput = document.getElementById('step');
+  const bgColorInput = document.getElementById('bgColor');
+  const crossColorInput = document.getElementById('crossColor');
+  const circleColorInput = document.getElementById('circleColor');
+  const showCrossInput = document.getElementById('showCross');
+  const showCirclesInput = document.getElementById('showCircles');
+  const infoEl = document.getElementById('info');
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+  function hexToRgb(hex) {
+    const v = parseInt(hex.slice(1), 16);
+    return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+  }
+
+  function packColor(r, g, b, a = 255) {
+    // Little-endian byte layout matches ImageData's R,G,B,A order.
+    return ((a << 24) | (b << 16) | (g << 8) | r) >>> 0;
+  }
+
+  function setPixel(buf32, w, h, x, y, color) {
+    if (x < 0 || x >= w || y < 0 || y >= h) return;
+    buf32[y * w + x] = color;
+  }
+
+  // For an even-sized axis there is no single center pixel: the two pixels
+  // straddling the true center (size/2 - 1 and size/2) are equally close to
+  // it, so mirroring offsets around that boundary keeps both sides symmetric.
+  // For an odd-sized axis the center pixel is exact, so offsets mirror around it.
+  function axisMapper(size) {
+    if (size % 2 === 0) {
+      const b = size / 2;
+      return { pos: (o) => b + o, neg: (o) => b - 1 - o };
+    }
+    const c = (size - 1) / 2;
+    return { pos: (o) => c + o, neg: (o) => c - o };
+  }
+
+  // Bresenham's circle algorithm: plots integer pixels directly, so no
+  // anti-aliasing is ever produced (unlike canvas arc()/stroke()).
+  // xMap/yMap mirror offsets around the true geometric center of each axis,
+  // so the circle is drawn perfectly symmetric even when width/height are even.
+  function drawCircle(buf32, w, h, xMap, yMap, radius, color) {
+    const plot = (ox, oy) => {
+      const xs = [xMap.pos(ox), xMap.neg(ox)];
+      const ys = [yMap.pos(oy), yMap.neg(oy)];
+      for (const px of xs) {
+        for (const py of ys) {
+          setPixel(buf32, w, h, px, py, color);
+        }
+      }
+    };
+
+    let x = 0;
+    let y = radius;
+    let d = 3 - 2 * radius;
+    while (x <= y) {
+      plot(x, y);
+      plot(y, x);
+      if (d < 0) {
+        d += 4 * x + 6;
+      } else {
+        d += 4 * (x - y) + 10;
+        y--;
+      }
+      x++;
+    }
+  }
+
+  // Thickness is even so it splits into equal pos/neg halves mirrored
+  // around the axis center, keeping the cross perfectly symmetric.
+  function drawCross(buf32, w, h, xMap, yMap, thickness, color) {
+    const half = thickness / 2;
+    for (let o = 0; o < half; o++) {
+      for (const x of [xMap.pos(o), xMap.neg(o)]) {
+        if (x < 0 || x >= w) continue;
+        for (let y = 0; y < h; y++) {
+          buf32[y * w + x] = color;
+        }
+      }
+    }
+    for (let o = 0; o < half; o++) {
+      for (const y of [yMap.pos(o), yMap.neg(o)]) {
+        if (y < 0 || y >= h) continue;
+        const rowStart = y * w;
+        for (let x = 0; x < w; x++) {
+          buf32[rowStart + x] = color;
+        }
+      }
+    }
+  }
+
+  function updateInfo(w, h) {
+    infoEl.textContent =
+      `canvas: ${w} x ${h} px (dpr ${dpr})\n` +
+      `center boundary: (${w / 2}, ${h / 2})`;
+  }
+
+  function render() {
+    const w = canvas.width;
+    const h = canvas.height;
+    if (w === 0 || h === 0) return;
+
+    const imageData = ctx.createImageData(w, h);
+    const buf32 = new Uint32Array(imageData.data.buffer);
+
+    const [br, bg, bb] = hexToRgb(bgColorInput.value);
+    buf32.fill(packColor(br, bg, bb));
+
+    // Both the cross and the circles mirror offsets around the true center, so both sides stay symmetric.
+    const xMap = axisMapper(w);
+    const yMap = axisMapper(h);
+
+    if (showCirclesInput.checked) {
+      const [cr, cg, cb] = hexToRgb(circleColorInput.value);
+      const color = packColor(cr, cg, cb);
+      const step = Math.max(1, parseInt(stepInput.value, 10) || 1);
+      const maxRadius = Math.ceil(Math.hypot(w / 2, h / 2));
+      for (let r = step; r <= maxRadius; r += step) {
+        drawCircle(buf32, w, h, xMap, yMap, r, color);
+      }
+    }
+
+    if (showCrossInput.checked) {
+      const [xr, xg, xb] = hexToRgb(crossColorInput.value);
+      const color = packColor(xr, xg, xb);
+      let thickness = parseInt(thicknessInput.value, 10) || 2;
+      if (thickness % 2 !== 0) thickness += 1; // force even so both halves mirror equally
+      if (thickness < 2) thickness = 2;
+      thicknessInput.value = thickness;
+      drawCross(buf32, w, h, xMap, yMap, thickness, color);
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    updateInfo(w, h);
+  }
+
+  function resizeCanvas() {
+    const cssW = window.innerWidth;
+    const cssH = window.innerHeight;
+    canvas.style.width = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    // Backing store matches physical device pixels 1:1 so the browser
+    // never rescales/smooths the canvas image.
+    canvas.width = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+    render();
+  }
+
+  [thicknessInput, stepInput, bgColorInput, crossColorInput, circleColorInput,
+    showCrossInput, showCirclesInput].forEach((el) => {
+    el.addEventListener('input', render);
+    el.addEventListener('change', render);
+  });
+
+  fullscreenBtn.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      document.documentElement.requestFullscreen();
+    }
+  });
+
+  window.addEventListener('resize', resizeCanvas);
+  window.addEventListener('orientationchange', resizeCanvas);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'h' || e.key === 'H') {
+      panel.classList.toggle('hidden');
+    }
+  });
+
+  resizeCanvas();
+})();
+</script>
+</body>
+</html>
