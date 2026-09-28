@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.href = item.url;
       link.setAttribute("aria-label", item.name + "の詳細を見る");
       image.src = item.image;
-      image.alt = item.name + "の仮イラスト";
+      image.alt = item.name + "の画像";
       image.width = 60;
       image.height = 60;
       link.appendChild(image);
