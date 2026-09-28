@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+{{ partial "breadcrumb.html" . }}
+<main class="peggy">
+  <h1>{{ .Title }}</h1>
+  <p class="peggy-note">このページの画像と説明はダミーです。実物の写真や管理人の所蔵品を示すものではありません。</p>
+  <figure class="peggy-detail-image">
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Params.category }}の仮イラスト" width="300" height="220">
+    <figcaption>仮イラスト</figcaption>
+  </figure>
+  <dl class="peggy-detail-meta">
+    <dt>種類</dt><dd>{{ .Params.category }}</dd>
+    <dt>概要</dt><dd>{{ .Params.summary }}</dd>
+  </dl>
+  <div class="peggy-detail-body">{{ .Content }}</div>
+  <p><a href="{{ .Parent.RelPermalink }}">← グッズ一覧に戻る</a></p>
+</main>
+{{ partial "footer.html" . }}

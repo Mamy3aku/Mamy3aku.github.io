@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" role="img" aria-label="ぬいぐるみの仮イラスト">
+  <rect width="300" height="220" rx="18" fill="#fff1f1"/>
+  <circle cx="103" cy="75" r="22" fill="#f5b5c8" stroke="#87556a" stroke-width="3"/>
+  <circle cx="197" cy="75" r="22" fill="#f5b5c8" stroke="#87556a" stroke-width="3"/>
+  <ellipse cx="150" cy="132" rx="72" ry="55" fill="#f5b5c8" stroke="#87556a" stroke-width="4"/>
+  <circle cx="128" cy="123" r="5" fill="#543846"/>
+  <circle cx="172" cy="123" r="5" fill="#543846"/>
+  <path d="M145 141q5 7 10 0" fill="none" stroke="#543846" stroke-width="3" stroke-linecap="round"/>
+  <text x="150" y="204" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#6b3f50">SAMPLE・仮画像</text>
+</svg>

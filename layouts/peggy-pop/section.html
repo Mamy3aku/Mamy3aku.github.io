@@ -1,0 +1,48 @@
+{{ partial "header.html" . }}
+{{ partial "breadcrumb.html" . }}
+<main class="peggy">
+  <h1>{{ .Title }}</h1>
+
+  <section aria-labelledby="peggy-about">
+    <h2 id="peggy-about">Peggy Pop について</h2>
+    {{ .Content }}
+    <p class="peggy-source">参考：<a href="https://ameblo.jp/knot-a-toy/entry-12109826118.html">おもちゃ屋 KNot a TOY「ファンシーペンギン♪ペギーポップ♪」</a></p>
+  </section>
+
+  <section aria-labelledby="peggy-goods">
+    <h2 id="peggy-goods">グッズ紹介</h2>
+    <p class="peggy-note">現在の3件は表示例です。画像と説明は仮のもので、管理人の所蔵品を示すものではありません。</p>
+    <p class="peggy-scroll-hint">一覧は左右にスクロールできます。画像をタップしても詳細ページを開けます。</p>
+
+    {{ $goods := slice }}
+    {{ range .RegularPages.ByWeight }}
+      {{ $goods = $goods | append (dict "name" .Title "category" .Params.category "description" .Params.summary "image" (.Params.image | relURL) "url" .RelPermalink) }}
+    {{ end }}
+    <script id="peggy-goods-data" type="application/json">{{ $goods | jsonify | safeJS }}</script>
+
+    <div id="peggy-grid" aria-label="Peggy Pop グッズ一覧"></div>
+    <table id="peggy-fallback" class="peggy-fallback">
+      <caption>グッズ一覧（サンプル）</caption>
+      <thead><tr><th scope="col">画像</th><th scope="col">品名</th><th scope="col">種類</th><th scope="col">説明</th><th scope="col">詳細</th></tr></thead>
+      <tbody>
+        {{ range .RegularPages.ByWeight }}
+        <tr>
+          <td><a href="{{ .RelPermalink }}" aria-label="{{ .Title }}の詳細を見る"><img src="{{ .Params.image | relURL }}" alt="{{ .Params.category }}の仮イラスト" width="68" height="68"></a></td>
+          <td>{{ .Title }}</td>
+          <td>{{ .Params.category }}</td>
+          <td>{{ .Params.summary }}</td>
+          <td><a href="{{ .RelPermalink }}">詳細を見る</a></td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="peggy-links">
+    <h2 id="peggy-links">関連リンク</h2>
+    <p>リンク準備中です。</p>
+  </section>
+</main>
+<script defer src="{{ "peggy-pop/vendor/tabulator.min.js" | relURL }}"></script>
+<script defer src="{{ "peggy-pop/grid.js" | relURL }}"></script>
+{{ partial "footer.html" . }}

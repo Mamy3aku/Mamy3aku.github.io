@@ -1,0 +1,104 @@
+.peggy {
+  padding-bottom: 1.5rem;
+}
+
+.peggy section {
+  margin: 1.5rem 0;
+}
+
+.peggy h2 {
+  border-bottom: 2px solid #265a78;
+  padding-bottom: 0.2rem;
+}
+
+.peggy p {
+  margin: 0.6rem 0;
+  line-height: 1.6;
+}
+
+.peggy-note {
+  padding: 0.7rem;
+  border-left: 4px solid #265a78;
+  background: #eaf9ff;
+}
+
+.peggy-source {
+  font-size: 0.9rem;
+}
+
+.peggy-scroll-hint {
+  display: none;
+}
+
+#peggy-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+#peggy-grid .tabulator-cell img {
+  object-fit: contain;
+}
+
+.peggy-fallback {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.peggy-fallback[hidden] {
+  display: none;
+}
+
+.peggy-fallback th,
+.peggy-fallback td {
+  border: 1px solid #618297;
+  padding: 0.45rem;
+  text-align: left;
+}
+
+.peggy-fallback td img {
+  max-width: none;
+}
+
+.peggy-detail-image {
+  margin: 1.2rem auto;
+  text-align: center;
+}
+
+.peggy-detail-image img {
+  width: min(100%, 300px);
+  height: auto;
+  border: 1px solid #618297;
+  background: white;
+}
+
+.peggy-detail-image figcaption {
+  font-size: 0.9rem;
+}
+
+.peggy-detail-meta {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.peggy-detail-meta dt {
+  font-weight: bold;
+}
+
+.peggy-detail-meta dd {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .peggy-scroll-hint {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .peggy-fallback {
+    display: block;
+    overflow-x: auto;
+  }
+}
