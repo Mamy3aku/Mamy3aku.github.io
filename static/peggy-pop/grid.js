@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
       link.setAttribute("aria-label", item.name + "の詳細を見る");
       image.src = item.image;
       image.alt = item.name + "の画像";
-      image.width = 60;
-      image.height = 60;
+      image.width = item.imageWidth;
+      image.height = item.imageHeight;
       link.appendChild(image);
       return link;
     }
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       layout: "fitColumns",
       placeholder: "グッズは準備中です。",
       columns: [
-        { title: "画像", field: "image", formatter: imageLinkFormatter, width: 78, minWidth: 78, headerSort: false },
+        { title: "画像", field: "image", formatter: imageLinkFormatter, width: 300, minWidth: 300, headerSort: false },
         { title: "品名", field: "name", minWidth: 150, widthGrow: 2, formatter: "textarea", variableHeight: true },
         { title: "製造年", field: "productionYear", minWidth: 90 },
         { title: "入手日", field: "acquiredDate", minWidth: 110 }

@@ -15,7 +15,15 @@
     {{ $goods := slice }}
     {{ range .RegularPages.ByWeight }}
       {{ $image := .Resources.GetMatch .Params.image }}
-      {{ $goods = $goods | append (dict "name" .Title "productionYear" .Params.production_year "acquiredDate" .Params.acquired_date "image" $image.RelPermalink "url" .RelPermalink) }}
+      {{ $angle := "" }}
+      {{ if in "jpeg tiff" $image.MediaType.SubType }}
+        {{ with $image.Meta }}
+          {{ $orientationArray := slice "dummy" "r0" "r0" "r180" "r0" "r0" "r270" "r0" "r90" }}
+          {{ $angle = index $orientationArray .Orientation }}
+        {{ end }}
+      {{ end }}
+      {{ $image = $image.Fit (print "500x500 webp q75 " $angle) }}
+      {{ $goods = $goods | append (dict "name" .Title "category" .Params.category "productionYear" .Params.production_year "acquiredDate" .Params.acquired_date "image" $image.RelPermalink "imageWidth" $image.Width "imageHeight" $image.Height "url" .RelPermalink) }}
     {{ end }}
     <script id="peggy-goods-data" type="application/json">{{ $goods | jsonify | safeJS }}</script>
 
@@ -24,13 +32,12 @@
       <caption>グッズ一覧（サンプル）</caption>
       <thead><tr><th scope="col">画像</th><th scope="col">品名</th><th scope="col">製造年</th><th scope="col">入手日</th></tr></thead>
       <tbody>
-        {{ range .RegularPages.ByWeight }}
-        {{ $image := .Resources.GetMatch .Params.image }}
+        {{ range $goods }}
         <tr>
-          <td><a href="{{ .RelPermalink }}" aria-label="{{ .Title }}の詳細を見る"><img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の画像" width="68" height="68"></a></td>
-          <td>{{ .Title }}</td>
-          <td>{{ .Params.production_year }}</td>
-          <td>{{ .Params.acquired_date }}</td>
+          <td><a href="{{ .url }}" aria-label="{{ .name }}の詳細を見る"><img src="{{ .image }}" alt="{{ .category }}の画像" width="{{ .imageWidth }}" height="{{ .imageHeight }}"></a></td>
+          <td>{{ .name }}</td>
+          <td>{{ .productionYear }}</td>
+          <td>{{ .acquiredDate }}</td>
         </tr>
         {{ end }}
       </tbody>
