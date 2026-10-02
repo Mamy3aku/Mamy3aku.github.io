@@ -36,7 +36,9 @@
 }
 
 #peggy-grid .tabulator-cell img {
-  object-fit: contain;
+  width: 280px;
+  height: auto;
+  max-width: 100%;
 }
 
 .peggy-fallback {
@@ -56,8 +58,16 @@
   text-align: left;
 }
 
+.peggy-fallback th:first-child,
+.peggy-fallback td:first-child {
+  width: 300px;
+  min-width: 300px;
+}
+
 .peggy-fallback td img {
-  max-width: none;
+  width: 280px;
+  height: auto;
+  max-width: 100%;
 }
 
 .peggy-detail-image {
