@@ -2,9 +2,8 @@
 {{ partial "breadcrumb.html" . }}
 <main class="peggy">
   <h1>{{ .Title }}</h1>
-  {{ $image := .Resources.GetMatch .Params.image }}
   <figure class="peggy-detail-image">
-    <img src="{{ $image.RelPermalink }}" alt="{{ .Params.category }}の画像" width="300" height="220">
+    {{ partial "thumb2.html" (dict "Page" . "Image" .Params.image "Alt" (printf "%sの画像" .Params.category)) }}
     <figcaption>グッズの画像</figcaption>
   </figure>
   <dl class="peggy-detail-meta">
