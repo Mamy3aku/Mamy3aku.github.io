@@ -5,6 +5,12 @@
 
   <section aria-labelledby="peggy-about">
     <h2 id="peggy-about">ペギーポップについて</h2>
+    {{ with .Resources.GetMatch "IMG_E1559.jpg" }}
+      {{ $preview := .Fit "1440x1440 webp q85" }}
+      <figure class="peggy-about-image">
+        <a href="{{ .RelPermalink }}"><img src="{{ $preview.RelPermalink }}" width="{{ $preview.Width }}" height="{{ $preview.Height }}" style="display:block;width:100%;height:auto;aspect-ratio:16 / 9" alt="並べたペギーポップのグッズ"></a>
+      </figure>
+    {{ end }}
     {{ .Content }}
   </section>
 
