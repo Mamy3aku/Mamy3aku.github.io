@@ -16,6 +16,17 @@
   line-height: 1.6;
 }
 
+.peggy-about-image {
+  margin: 1rem auto;
+  max-width: 720px;
+}
+
+.peggy-about-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .peggy-note {
   padding: 0.7rem;
   border-left: 4px solid #265a78;
